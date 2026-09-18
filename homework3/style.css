@@ -1,0 +1,124 @@
+html {
+    background-color: black;
+    color: white;
+}
+
+img {
+    border: 5px solid purple;
+}
+
+.all {
+    display: grid;
+    grid-template-rows: auto 400px auto;
+    grid-template-columns: 200px auto;
+    grid-template-areas: 
+        "header header header"
+        "sidebar main main"
+        "footer footer footer"
+        ;
+    row-gap: 20px;
+    column-gap: 10px;
+}
+
+div {
+    background-color: black;
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+
+.header {
+    grid-area: header;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    overflow-y: scroll;
+
+}
+
+.main {
+    grid-area: main;
+    height: 356px;
+    overflow-y: scroll;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.summarybar {
+    background-color: navy;
+    margin: 5px;
+}
+
+.skillsbar {
+    background-color:darkred;
+    padding: auto;
+    margin: 5px;
+}
+
+.projectsbar {
+    background-color:darkmagenta;
+    padding: auto;
+    margin: 5px;
+}
+
+.educationbar {
+    background-color:darkgreen;
+    padding: auto;
+    margin: 5px;
+}
+
+.contactbar {
+    background-color:darkslateblue;
+    padding: auto;
+    margin: 5px;
+}
+
+#skills {
+    h3 {
+        color:red;
+    }
+}
+
+#projects {
+    h3 {
+        color:magenta;
+    }
+}
+
+#education {
+    h3 {
+        color:green;
+    }
+}
+
+#introduction {
+    h3 {
+        color:blue;
+    }
+}
+
+#contact {
+    h3 {
+        color:slateblue;
+    }
+}
+
+.resume {
+    max-width: 75px;
+    font-size: 16px;
+    color: white;
+    border: solid 5px white;
+    background-color:darkmagenta;
+}
+
+.resumelink {
+    color: white;
+    text-decoration: none;
+}
