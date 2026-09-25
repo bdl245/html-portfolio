@@ -1,0 +1,232 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid purple;
+}
+
+.all {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    gap: 20px 10px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+div {
+    background-color: black;
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+
+.header {
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    min-height: 400px;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.summarybar,
+.skillsbar,
+.projectsbar,
+.educationbar,
+.contactbar {
+    margin: 5px;
+}
+
+.summarybar {
+    background-color: navy;
+}
+
+.skillsbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: darkred;
+}
+
+.projectsbar {
+    background-color: darkmagenta;
+}
+
+.educationbar {
+    background-color: darkgreen;
+}
+
+.contactbar {
+    background-color: darkslateblue;
+}
+
+#skills h3 {
+    color: red;
+}
+
+#projects h3 {
+    color: magenta;
+}
+
+#education h3 {
+    color: green;
+}
+
+#introduction h3 {
+    color: blue;
+}
+
+#contact h3 {
+    color: slateblue;
+}
+
+#skills li,
+#skills span {
+    transition: transform 0.3s ease, background-color 0.3s ease,
+        border-radius 0.3s ease, box-shadow 0.3s ease;
+}
+
+#skills li:hover,
+#skills span:hover {
+    transform: scale(1.08) rotate(2deg);
+    background-color: crimson;
+    border-radius: 8px;
+    box-shadow: 0 0 12px white;
+}
+
+#projects img {
+    float: left;
+    width: 30%;
+    margin: 0 15px 15px 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#projects img:hover {
+    opacity: 0.75;
+    transform: scale(1.05);
+}
+
+#projects::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.resume {
+    display: inline-block;
+    max-width: 180px;
+    padding: 10px 16px;
+    font-size: 16px;
+    color: white;
+    border: 3px solid white;
+    border-radius: 6px;
+    background-color: darkmagenta;
+    transition: background-color 0.3s ease, border-radius 0.3s ease,
+        box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.resume:hover {
+    background-color: purple;
+    border-radius: 18px;
+    box-shadow: 0 0 15px magenta;
+    transform: translateY(-3px);
+}
+
+.resumelink {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .all {
+        grid-template-columns: 160px minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    div {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .all {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+
+    .sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main {
+        display: block;
+        min-height: auto;
+    }
+
+    .main > div {
+        margin-bottom: 15px;
+    }
+
+    #projects img {
+        float: none;
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
