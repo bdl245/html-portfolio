@@ -1,0 +1,38 @@
+body {
+    background-color: #f2f6f4;
+    font-family: "DM Sans", sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.site-header {
+    --bs-primary-rgb: 18, 70, 78;
+    --bs-gradient: linear-gradient(to right, #123f49, #357b67);
+}
+
+.greeting {
+    color: #176e72;
+    font-weight: 600;
+}
+
+.card:hover {
+    border-color: #176e72;
+}
+
+.site-footer {
+    --bs-dark-rgb: 25, 48, 53;
+    --bs-gradient: linear-gradient(to right, #193035, #31534e);
+}
+
+.site-footer a {
+    color: white;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background-color: #18343a;
+}
